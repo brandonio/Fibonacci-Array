@@ -1,0 +1,27 @@
+import java.util.Scanner;
+/**
+ * This program is going to output the Fibonacci sequence.
+ * @Brandon Berookhim
+ * @V1
+ */
+public class Fibonacci
+{
+    int[] myFibArray = new int[20];
+    public static void main(String[] args) {
+        int numTerms = 20;
+        int[] myFibArray = getFibSeq(numTerms);
+        for (int i = 0; i < myFibArray.length; i++) {
+            System.out.println(myFibArray[i]);
+        }
+    }
+
+    public static int[] getFibSeq(int numTerms) {
+        int[] fibTerms = new int[numTerms];
+        fibTerms[0] = 1;
+        fibTerms[1] = 1;
+        for (int i = 2; i < numTerms; i++) {
+            fibTerms[i] = fibTerms[i-1] + fibTerms[i-2];
+        }
+        return fibTerms;
+    }
+}
